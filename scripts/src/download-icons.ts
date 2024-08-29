@@ -10,8 +10,6 @@ const icons: string[] = (
   await Promise.all(
     [
       ["resume.typ"],
-      ["cover.typ", "--input", "theme=light"],
-      ["cover.typ", "--input", "theme=dark"],
     ].map((file) => $`typst query ${file} '<icon>' --field value`.json())
   )
 ).flat();
@@ -27,9 +25,8 @@ for (const icon of icons) {
   )?.groups ?? {};
   const query = parse(rawQuery);
 
-  const filename = `${prefix}/${name}${
-    query.color ? `-${query.color}` : ""
-  }.svg`;
+  const filename = `${prefix}/${name}${query.color ? `-${query.color}` : ""
+    }.svg`;
   const file = `assets/.automatic/icon/${filename}`;
   data[icon] = filename;
   if (await Bun.file(file).exists()) {

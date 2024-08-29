@@ -84,9 +84,6 @@
       [#icon("devicon/github") *GitHub*],
       link("https://github.com/" + metadata.social.github)[\@#metadata.social.github],
 
-      [#icon("logos/twitter") *Twitter*],
-      link("https://twitter.com/" + metadata.social.twitter)[\@#metadata.social.twitter],
-
       [#icon-solved-ac() *solved.ac*],
       link("https://solved.ac/profile/" + metadata.social.solved-ac)[
         #solved-ac-profile(metadata.social.solved-ac)
@@ -99,26 +96,23 @@
 
 == 기술#super[Skills]
 
-#box(inset: (left: 8pt, top: 4pt))[
-  #align(center)[
+#align(center)[
+  #box(inset: (left: 8pt, top: 4pt))[
     #for row in (
       (
+        tech-list.cplusplus,
+        tech-list.python,
+        tech-list.rust,
         tech-list.typescript--short,
-        tech-list.javascript--short,
-        tech-list.css,
-        tech-list.react-and-react-native,
-        tech-list.nextjs,
-        tech-list.solidjs,
-        tech-list.tailwindcss,
-        tech-list.unocss,
-        tech-list.eslint,
+        tech-list.nestjs,
+        tech-list.dart,
+        tech-list.flutter,
       ),
       (
-        tech-list.rust,
-        tech-list.kotlin,
-        tech-list.swift,
-        tech-list.bash,
-        tech-list.gradle,
+        tech-list.amazonwebservices,
+        tech-list.dynamodb,
+        tech-list.mariadb,
+        tech-list.postgresql,
         tech-list.git,
         tech-list.github,
         tech-list.github-actions,
@@ -132,43 +126,20 @@
   ]
 ]
 
-#workExpList(
-  header: [
-    == 경력#super[Work Experiences]
-  ],
-  (
-    workExpEntry(
-      from: datetime(year: 2023, month: 3, day: 20),
-      to: datetime.today(),
-      role: "프론트엔드 엔지니어",
-      organization: "주식회사 라프텔(Laftel)",
-      homepage: link("https://laftel.oopy.io")[laftel.oopy.io],
-    )[
-      애니메이션 OTT 서비스 라프텔에서 React와 React Native를 활용한 웹/앱 개발을 맡았습니다. 수행한 주요 업무는 다음과 같습니다.
-      - Firebase를 활용한 A/B 테스트
-      - react-email과 tailwindcss를 활용한 이메일 템플릿 생성 및 관리, CI 연동 작업
-      - Next.js ISR을 활용한 Notion Database 기반 회사 블로그 구현
-    ],
-  ),
-)
-
 #activityList(
   header: [
-    == 기타 활동#super[Other Activities]
+    == 대외 활동#super[Activities]
   ],
   (
     activityEntry(
-      from: datetime(year: 2023, month: 11, day: 17),
-      title: belonging([해커톤 멘토 $and$ 심사위원], [쿠씨톤]),
-    )[
-      #link("https://kucc.co.kr/")[#text(
-          fill: color.rgb("#1c7ed6"),
-        )[#underline[KUCC]#sub[Korea University Computer Club]]]에서 주최한 2023년 쿠씨톤에서 해커톤
-      멘토 및 심사위원을 맡아 Django, React, Pygame 등을 사용하는 멘티들을 서포트하고, 작품을 심사했습니다.
-    ],
+      from: datetime(year: 2023, month: 4, day: 3),
+      to: datetime(year: 2023, month: 11, day: 30),
+      title: "SW Maestro - 소프트웨어 마에스트로",
+    )[],
     activityEntry(
-      from: datetime(year: 2022, month: 9, day: 20),
-      title: "NYPC 2022 특별상",
+      from: datetime(year: 2022, month: 7, day: 1),
+      to: datetime(year: 2023, month: 3, day: 30),
+      title: "Best of the Best - 차세대 보안리더 양성 프로그램",
     )[],
   ),
 )
@@ -179,105 +150,88 @@
   ],
   (
     activityEntry(
-      from: datetime(year: 2023, month: 10, day: 29),
+      from: datetime(year: 2024, month: 7, day: 1),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("psl-lang/psl"), [ #tech-chips.rust ],
-        )
-      ],
-    )[ 알고리즘 문제 해결에 활용하기 좋은 프로그래밍 언어를 설계하고 만들었습니다. 간단한 입출력과 사칙 연산, 반복문 및 조건문을 사용할 수
-      있습니다. 컴파일 결과물로는 백준 온라인 저지 및 CodeForces에 제출할 수 있는 C 코드를 생성해냅니다. ],
-    activityEntry(
-      from: datetime(year: 2022, month: 8, day: 21),
-      title: pad(top: -1em / 4)[
-        #grid(
-          columns: (1fr, auto),
-          gh-repo("RanolP/crowdin-strife"), [ #tech-chips.rust #tech-chips.mysql ],
-        )
-      ],
-    )[ Minecraft 번역 커뮤니티 사용자들이 기존 번역례 및 외전 게임 텍스트를 쉽게 찾아볼 수 있도록 봇을 제작했습니다 ],
-    activityEntry(
-      from: datetime(year: 2022, month: 1, day: 9),
-      title: pad(top: -1em / 4)[
-        #grid(
-          columns: (1fr, auto),
-          gh-repo("RanolP/measurrred"), [ #tech-chips.rust ],
+          gh-repo("Bibimbap-Team"), [ #tech-chips.rust #tech-chips.postgresql ],
         )
       ],
     )[
-      WinAPI를 활용해 작업 표시줄에 CPU 사용량, 남은 배터리 등의 정보를 보여줄 수 있도록 커스텀 위젯을 제작할 수 있는 프로그램을
-      만들었습니다
+      알고리즘 문제 검수 플랫폼 "Bibimbap"을 개발하는 프로젝트로, Rust와 PostgreSQL을 사용했습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Rust를 활용한 백엔드 API 개발
     ],
     activityEntry(
-      from: datetime(year: 2021, month: 12, day: 10),
+      from: datetime(year: 2024, month: 4, day: 1),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("RanolP/bojodog"), [ #tech-chips.typescript #tech-chips.webpack ],
+          gh-repo("bo-an-bo"), [ #tech-chips.nestjs #tech-chips.mongodb #tech-chips.github-actions ],
         )
       ],
-    )[ VS Code 안에서 백준 온라인 저지 문제를 확인할 수 있는 간단한 VS Code 확장을 만들었습니다 ],
+    )[
+      학기중 진행한 프로젝트로, 동아리 회계 관리를 보조하기 위한 웹 애플리케이션을 개발했습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Nest.js와 MongoDB를 활용한 백엔드 API 개발
+      - Git Action을 활용한 CI/CD 구축
+      - Excel 문서 암복호화, 파싱 및 업로드 기능 개발
+    ],
     activityEntry(
-      from: datetime(year: 2021, month: 11, day: 27),
+      from: datetime(year: 2024, month: 1, day: 24),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("RanolP/bojoke"), [ #tech-chips.typescript #tech-chips.vite ],
+          gh-repo("Code-Poker"), [ #tech-chips.nestjs #tech-chips.mongodb #tech-chips.github-actions ],
         )
       ],
-    )[ prosemirror를 활용해 백준 온라인 저지의 양식으로 문제 본문을 편집할 수 있는 WYSIWYG 에디터를 구현했습니다 ],
+    )[
+      겨울방학 기간 교내 동아리에서 즐겨하던 보드게임 스코어보드 및 잃은 점수에 따른 알고리즘 문제 채점 현황을 확인할 수 있는 웹 애플리케이션을 개발했습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Nest.js와 MongoDB를 활용한 백엔드 API 개발
+      - Git Action을 활용한 CI/CD 구축
+    ],
     activityEntry(
-      from: datetime(year: 2021, month: 1, day: 4),
+      from: datetime(year: 2023, month: 5, day: 1),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("RanolP/rano-lang"), [ #tech-chips.rust #tech-chips.wasm ],
+          gh-repo("amicably-until-the-end"),
+          [ #tech-chips.nestjs #tech-chips.amazonwebservices #tech-chips.dynamodb #tech-chips.github-actions ],
         )
       ],
-    )[ WebAssembly로 컴파일되는 작은 프로그래밍 언어를 만들어 함수 선언 및 호출, if ~ else 문 등을 구현했습니다. ],
+    )[
+      SW Maestro에서 진행한 프로젝트로, 스마트폰 및 태블릿을 사용하는 학생들을 대상으로 한 실시간 과외 플랫폼 앱을 개발했습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Nest.js와 DynamoDB를 활용한 백엔드 API 개발
+      - AWS를 활용한 클라우드 인프라 구축 및 관리
+      - Git Action을 활용한 CI/CD 구축
+      - 외부 SaaS를 활용한 과외 플랫폼 구축
+    ],
     activityEntry(
-      from: datetime(year: 2020, month: 10, day: 9),
+      from: datetime(year: 2022, month: 11, day: 1),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("RanolP/dalmoori-font"), [ #tech-chips.typescript ],
+          gh-repo("My-solved/My.solved"), [#tech-chips.nestjs #tech-chips.flutter #tech-chips.github-actions ],
         )
       ],
-    )[ 한글날을 기념해 현대 한글 11,172자를 전부 지원하는 8 $times$ 8 도트풍 한글 글꼴 '달무리'를 만들었습니다. 현재 산돌 무료
-      폰트 중 하나로 등재되어 있습니다. ],
+    )[
+      알고리즘 커뮤니티 solved.ac의 API를 활용한 프로젝트로, 사용자의 문제 풀이 현황 및 CP 대회 일정을 확인하는 앱을 개발했습니다. 크로스플랫폼 개발을 위해 Flutter를 사용했으며, App Store 및 Play Store, Web으로 배포했습니다. 크롤링을 위해 Nest.js 서버 또한 개발했습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Flutter를 활용한 모바일 앱 개발
+      - Nest.js를 활용한 크롤링 서버 개발
+      - Git Action을 활용한 CI/CD 구축
+    ],
     activityEntry(
-      from: datetime(year: 2020, month: 6, day: 21),
+      from: datetime(year: 2022, month: 10, day: 1),
       title: pad(top: -1em / 4)[
         #grid(
           columns: (1fr, auto),
-          gh-repo("solvedac/unofficial-documentation"), [ #tech-chips.openapi ],
+          gh-repo("DF-CAT"), [ #tech-chips.python #tech-chips.nestjs #tech-chips.amazonwebservices #tech-chips.mariadb],
         )
       ],
-    )[ 알고리즘 문제풀이 커뮤니티, #link(
-        "https://solved.ac/",
-      )[#icon-solved-ac() #underline[#text(fill: color.rgb("#1c7ed6"))[solved.ac]]]의
-      API를 비공식적으로 OpenAPI 규격에 맞게 문서화했습니다 ],
-    activityEntry(
-      from: datetime(year: 2020, month: 5, day: 13),
-      title: pad(top: -1em / 4)[
-        #grid(
-          columns: (1fr, auto),
-          link("https://github.com/hanzzok")[#icon("devicon/github", bottom: -1em / 6) hanzzok],
-          [ #tech-chips.rust #tech-chips.wasm #tech-chips.typescript #tech-chips.nextjs ],
-        )
-      ],
-    )[ Markdown의 대안으로 쓸 수 있는 마크업 언어를 설계해 HTML로 컴파일하는 Rust 구현체를 작성했습니다. 이후, 해당 구현을
-      WebAssembly로 컴파일해 웹페이지에서 실행하는 놀이터를 만들었습니다. ],
-    activityEntry(
-      from: datetime(year: 2020, month: 4, day: 8),
-      title: pad(top: -1em / 4)[
-        #grid(
-          columns: (1fr, auto),
-          gh-repo("RanolP/boj"), [ #tech-chips.typescript #tech-chips.playwright ],
-        )
-      ],
-    )[ 백준 온라인 저지에 문제를 제출하고, 성공 여부를 바탕으로 특정일에 푼 문제 및 사용 언어 통계들을 제공하는 툴체인을 개발했습니다 ],
+    )[
+      Best of the Best에서 진행한 프로젝트로, "디지털포렌식 관점에서의 정보 유출 대응 프레임워크 개발"을 주제로 진행되었습니다. 수행한 주요 업무는 다음과 같습니다.
+      - Python을 활용한 디지털 포렌식 아티팩트 수집 툴 개발
+      - Nest.js와 MariaDB를 활용한 디지털 포렌식 아티팩트 검색 API 개발
+      - AWS를 활용한 클라우드 인프라 구축 및 관리
+    ],
   ),
 )
 
