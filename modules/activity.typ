@@ -13,7 +13,7 @@
       str(year) + "년"
     }
     #if month != 0 {
-      str(month) + "개월"
+      str(month) + " months"
     }
   ]
 }
@@ -53,7 +53,7 @@
                     } else {
                       "Present"
                     } \
-                    #text(size: 8pt)[약 #formatDuration(to - from)
+                    #text(size: 8pt)[about #formatDuration(to - from)
                     ]
                   ]
                 }

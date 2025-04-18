@@ -8,10 +8,16 @@
         가까운 일상 속 사소한 불만을 소프트웨어로 해결하기 위해, 프로젝트를 만들고 참여하며 개발자로서의 성장을 이루고 있습니다.
       ],
     ),
-    en: [Software engineer who dreams about security.],
+    en: (
+      title: text(weight: 300)[A software engineer who dreams about security.],
+      body: text[
+        I am walking the path of problem solving in the intersection of mathematics, computer science, and security. \
+        To solve small complaints in daily life with software, I am creating and participating in projects to achieve my growth as a developer.
+      ],
+    ),
   ),
-  role: "Backend Engineer",
-  location: "대한민국 세종특별자치시",
+  role: "Software Engineering Intern",
+  location: "Seoul",
   email: "me@w8385.dev",
   phone: ("+82", "10", "6721", "8385"),
   social: (github: "w8385", blog: "https://w8385.dev"),
