@@ -80,7 +80,7 @@
     label: "GitHub",
   ),
   github-actions: (icon: "devicon/githubactions", label: "GitHub Actions"),
-  nestjs: (icon: "devicon/nestjs", label: "Nest.js"),
+  nestjs: (icon: "devicon/nestjs", label: "NestJS"),
   python: (icon: "devicon/python", label: "Python"),
   cplusplus: (icon: "devicon/cplusplus", label: "C++"),
 )
