@@ -61,7 +61,9 @@
             ]
           ],
           block(breakable: false)[
-            #set par(leading: 0.6em, spacing: 0.5em)
+            #set par(leading: 0.6em)
+            #set block(spacing: 0.6em)
+            #set list(spacing: 0.6em)
             #pad()[
               #set text(size: 12pt, weight: 700)
               #title
