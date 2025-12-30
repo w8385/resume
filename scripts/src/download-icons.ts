@@ -10,6 +10,8 @@ const icons: string[] = (
   await Promise.all(
     [
       ["resume.typ"],
+      ["cover.typ", "--input", "theme=light"],
+      ["cover.typ", "--input", "theme=dark"],
     ].map((file) => $`typst query ${file} '<icon>' --field value`.json())
   )
 ).flat();
