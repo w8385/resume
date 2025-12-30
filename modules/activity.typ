@@ -1,10 +1,10 @@
 #import "util.typ": *
 
-#let formatDuration(duration) = {
-  let duration-in-weeks = if type(duration) == "duration" {
-    duration.weeks()
+#let formatDuration(dur) = {
+  let duration-in-weeks = if type(dur) == duration {
+    dur.weeks()
   } else {
-    duration
+    dur
   }
   let year = calc.floor(duration-in-weeks / 4 / 12)
   let month = calc.rem(calc.floor(duration-in-weeks / 4), 12)
@@ -13,7 +13,7 @@
       str(year) + "년"
     }
     #if month != 0 {
-      str(month) + " months"
+      str(month) + "개월"
     }
   ]
 }
@@ -21,7 +21,7 @@
 #let activityList(entries, body-header: none, header: none) = {
   let total-duration-in-weeks = 0
   for (from, to, ..) in entries {
-    if type(to) != "datetime" {
+    if type(to) != datetime {
       continue
     }
     total-duration-in-weeks += (to - from).weeks()
@@ -45,7 +45,7 @@
                 #{
                   from.display("[year].[month]")
                 }
-                #if type(to) == "datetime" {
+                #if type(to) == datetime {
                   [
                     \~
                     #if to != datetime.today() {
@@ -53,17 +53,17 @@
                     } else {
                       "Present"
                     } \
-                    #text(size: 8pt)[about #formatDuration(to - from)
-                    ]
+                    // #text(size: 8pt)[약 #formatDuration(to - from)
+                    // ]
                   ]
                 }
               ]
             ]
           ],
           block(breakable: false)[
-            #pad(bottom: -4pt)[
+            #set par(leading: 0.6em, spacing: 0.5em)
+            #pad()[
               #set text(size: 12pt, weight: 700)
-              #set par(leading: 0.5em)
               #title
             ]
             #set text(size: 10pt)
@@ -96,13 +96,13 @@
   body,
   from: from,
   to: to,
-  title: grid(
-    columns: (1fr, auto),
-    belonging(role, organization),
-    if homepage != "" {
+  title: [
+    #belonging(role, organization)
+    #h(1fr)
+    #if homepage != "" {
       show link: set text(fill: color.rgb("#1c7ed6"))
       show link: underline
       homepage
-    },
-  ),
+    }
+  ],
 )
